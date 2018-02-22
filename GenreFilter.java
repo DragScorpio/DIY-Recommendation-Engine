@@ -1,0 +1,20 @@
+
+/**
+ * This class filters movies with a specified genre
+ * 
+ * @Xiangzhen Sun
+ * @2/19/2018
+ */
+
+public class GenreFilter implements Filter {
+    private String myGenre;
+    
+    public GenreFilter( String genre ) {
+        myGenre = genre;
+    }
+    
+    @Override
+    public boolean satisfies(String id) {
+        return MovieDatabase.getGenres(id).contains( myGenre );
+    }
+}
